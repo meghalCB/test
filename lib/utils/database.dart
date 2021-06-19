@@ -8,13 +8,24 @@ class Database {
 
   static Future<void> addItem({
     required String title,
+    required String km,
+    required String fuelamt,
+    required String fuelpl,
+    required String location,
+    required String notes,
     required String description,
+
   }) async {
     DocumentReference documentReferencer =
         _mainCollection.doc(userUid).collection('items').doc();
 
     Map<String, dynamic> data = <String, dynamic>{
       "title": title,
+      "km": km,
+      "fuelamt": fuelamt,
+      "fuelpl": fuelpl,
+      "location": location,
+      "notes": notes,
       "description": description,
     };
 
@@ -26,6 +37,11 @@ class Database {
 
   static Future<void> updateItem({
     required String title,
+    required String km,
+    required String fuelamt,
+    required String fuelpl,
+    required String location,
+    required String notes,
     required String description,
     required String docId,
   }) async {
@@ -34,6 +50,11 @@ class Database {
 
     Map<String, dynamic> data = <String, dynamic>{
       "title": title,
+      "km": km,
+      "fuelamt": fuelamt,
+      "fuelpl": fuelpl,
+      "location": location,
+      "notes": notes,
       "description": description,
     };
 

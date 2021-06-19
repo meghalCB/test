@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Text(
+                      /*Text(
                         'FlutterFire',
                         style: TextStyle(
                           color: CustomColors.firebaseYellow,
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: CustomColors.firebaseOrange,
                           fontSize: 40,
                         ),
-                      ),
+                      ),*/
                     ],
                   ),
                 ),

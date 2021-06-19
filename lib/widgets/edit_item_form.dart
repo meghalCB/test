@@ -31,6 +31,11 @@ class _EditItemFormState extends State<EditItemForm> {
   bool _isProcessing = false;
 
   late TextEditingController _titleController;
+  late TextEditingController _kmController;
+  late TextEditingController _fuelamtController;
+  late TextEditingController _fuelplController;
+  late TextEditingController _locationController;
+  late TextEditingController _notesController;
   late TextEditingController _descriptionController;
 
   @override
@@ -144,6 +149,11 @@ class _EditItemFormState extends State<EditItemForm> {
                         await Database.updateItem(
                           docId: widget.documentId,
                           title: _titleController.text,
+                          km: _kmController.text,
+                          fuelamt: _fuelamtController.text,
+                          fuelpl: _fuelplController.text,
+                          location: _locationController.text,
+                          notes: _notesController.text,
                           description: _descriptionController.text,
                         );
 

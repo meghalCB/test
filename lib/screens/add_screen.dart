@@ -27,6 +27,7 @@ class AddScreen extends StatelessWidget {
 
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: CustomColors.firebaseNavy,
         appBar: AppBar(
           elevation: 0,

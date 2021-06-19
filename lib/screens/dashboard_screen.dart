@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutterfire_samples/screens/add_screen.dart';
+import 'package:flutterfire_samples/screens/upload_doc.dart';
 import 'package:flutterfire_samples/widgets/app_bar_title.dart';
 import 'package:flutterfire_samples/widgets/item_list.dart';
 
@@ -52,7 +53,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           color: Colors.white,
           size: 32,
         ),
-      )*/,
+      ),*/
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(

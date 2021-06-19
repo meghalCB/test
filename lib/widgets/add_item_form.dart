@@ -76,12 +76,12 @@ class _AddItemFormState extends State<AddItemForm> {
                   validator: (value) => Validator.validateField(
                     value: value,
                   ),
-                  label: 'Title',
-                  hint: 'Enter your note title',
+                  label: 'Add Fuel For',
+                  hint: 'Enter Fuel For',
                 ),
                 SizedBox(height: 24.0),
                 Text(
-                  'Description',
+                  'Enter KM',
                   style: TextStyle(
                     color: CustomColors.firebaseGrey,
                     fontSize: 22.0,
@@ -104,8 +104,9 @@ class _AddItemFormState extends State<AddItemForm> {
                   hint: 'Enter KM',
                 ),
                 SizedBox(height: 24.0),
+
                 Text(
-                  'Description',
+                  'Fuel Amount',
                   style: TextStyle(
                     color: CustomColors.firebaseGrey,
                     fontSize: 22.0,
@@ -114,20 +115,93 @@ class _AddItemFormState extends State<AddItemForm> {
                   ),
                 ),
                 SizedBox(height: 8.0),
-
-                /*CustomFormField(
-                  maxLines: 10,
+                CustomFormField(
                   isLabelEnabled: false,
-                  controller: _descriptionController,
-                  focusNode: widget.descriptionFocusNode,
+                  controller: _fuelamtController,
+                  focusNode: widget.fuelamtFocusNode,
                   keyboardType: TextInputType.text,
                   inputAction: TextInputAction.done,
                   validator: (value) => Validator.validateField(
                     value: value,
                   ),
-                  label: 'Description',
-                  hint: 'Enter your note description',
-                ),*/
+                  label: 'Fuel Amount',
+                  hint: 'Enter Fuel Amount',
+                ),
+                SizedBox(height: 24.0),
+
+                Text(
+                  'Fuel Amount Per Liter',
+                  style: TextStyle(
+                    color: CustomColors.firebaseGrey,
+                    fontSize: 22.0,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                CustomFormField(
+                  isLabelEnabled: false,
+                  controller: _fuelamtController,
+                  focusNode: widget.fuelamtFocusNode,
+                  keyboardType: TextInputType.text,
+                  inputAction: TextInputAction.done,
+                  validator: (value) => Validator.validateField(
+                    value: value,
+                  ),
+                  label: 'Fuel Amount Per Liter',
+                  hint: 'Enter Fuel Amount Per Liter',
+                ),
+                SizedBox(height: 24.0),
+
+                Text(
+                  'Location',
+                  style: TextStyle(
+                    color: CustomColors.firebaseGrey,
+                    fontSize: 22.0,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                CustomFormField(
+                  isLabelEnabled: false,
+                  controller: _locationController,
+                  focusNode: widget.locationFocusNode,
+                  keyboardType: TextInputType.text,
+                  inputAction: TextInputAction.done,
+                  validator: (value) => Validator.validateField(
+                    value: value,
+                  ),
+                  label: 'Location',
+                  hint: 'Enter your Location',
+                ),
+                SizedBox(height: 24.0),
+
+                Text(
+                  'Notes',
+                  style: TextStyle(
+                    color: CustomColors.firebaseGrey,
+                    fontSize: 22.0,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                CustomFormField(
+                  maxLines: 10,
+                  isLabelEnabled: false,
+                  controller: _locationController,
+                  focusNode: widget.locationFocusNode,
+                  keyboardType: TextInputType.text,
+                  inputAction: TextInputAction.done,
+                  validator: (value) => Validator.validateField(
+                    value: value,
+                  ),
+                  label: 'Notes',
+                  hint: 'Notes',
+                ),
+                SizedBox(height: 24.0),
+
               ],
             ),
           ),
@@ -164,7 +238,13 @@ class _AddItemFormState extends State<AddItemForm> {
 
                         await Database.addItem(
                           title: _titleController.text,
+                          km: _kmController.text,
+                          fuelamt: _fuelamtController.text,
+                          fuelpl: _fuelplController.text,
+                          location: _locationController.text,
+                          notes: _notesController.text,
                           description: _descriptionController.text,
+
                         );
 
                         setState(() {

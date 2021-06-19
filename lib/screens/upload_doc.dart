@@ -6,17 +6,15 @@ import 'package:flutter/services.dart';
 import 'package:flutterfire_samples/screens/second_page.dart';
 
 
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title}) : super(key: key);
+class Upload_doc extends StatefulWidget {
+  Upload_doc({Key? key, this.title}) : super(key: key);
 
   final String? title;
-
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _Upload_docState createState() => _Upload_docState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Upload_docState extends State<Upload_doc> {
   var storage = FirebaseStorage.instance;
   late List<AssetImage> listOfImage;
   bool clicked = false;
