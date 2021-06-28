@@ -95,7 +95,7 @@ class _AddItemFormState extends State<AddItemForm> {
                   isLabelEnabled: false,
                   controller: _kmController,
                   focusNode: widget.kmFocusNode,
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
                   inputAction: TextInputAction.next,
                   validator: (value) => Validator.validateField(
                     value: value,
@@ -119,7 +119,7 @@ class _AddItemFormState extends State<AddItemForm> {
                   isLabelEnabled: false,
                   controller: _fuelamtController,
                   focusNode: widget.fuelamtFocusNode,
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
                   inputAction: TextInputAction.done,
                   validator: (value) => Validator.validateField(
                     value: value,
@@ -141,8 +141,8 @@ class _AddItemFormState extends State<AddItemForm> {
                 SizedBox(height: 8.0),
                 CustomFormField(
                   isLabelEnabled: false,
-                  controller: _fuelamtController,
-                  focusNode: widget.fuelamtFocusNode,
+                  controller: _fuelplController,
+                  focusNode: widget.fuelplFocusNode,
                   keyboardType: TextInputType.text,
                   inputAction: TextInputAction.done,
                   validator: (value) => Validator.validateField(
@@ -190,8 +190,8 @@ class _AddItemFormState extends State<AddItemForm> {
                 CustomFormField(
                   maxLines: 10,
                   isLabelEnabled: false,
-                  controller: _locationController,
-                  focusNode: widget.locationFocusNode,
+                  controller: _notesController,
+                  focusNode: widget.notesFocusNode,
                   keyboardType: TextInputType.text,
                   inputAction: TextInputAction.done,
                   validator: (value) => Validator.validateField(

@@ -6,12 +6,12 @@ import 'package:flutterfire_samples/widgets/edit_item_form.dart';
 
 class EditScreen extends StatefulWidget {
   final String currentTitle;
-  final String currentDescription;
+  // final String currentDescription;
   final String documentId;
 
   EditScreen({
     required this.currentTitle,
-    required this.currentDescription,
+    // this.currentDescription,
     required this.documentId,
   });
 
@@ -90,7 +90,7 @@ class _EditScreenState extends State<EditScreen> {
               titleFocusNode: _titleFocusNode,
               descriptionFocusNode: _descriptionFocusNode,
               currentTitle: widget.currentTitle,
-              currentDescription: widget.currentDescription,
+              // currentDescription: widget.currentDescription,
             ),
           ),
         ),

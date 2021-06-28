@@ -10,14 +10,14 @@ class EditItemForm extends StatefulWidget {
   final FocusNode titleFocusNode;
   final FocusNode descriptionFocusNode;
   final String currentTitle;
-  final String currentDescription;
+  // final String currentDescription;
   final String documentId;
 
   const EditItemForm({
     required this.titleFocusNode,
     required this.descriptionFocusNode,
     required this.currentTitle,
-    required this.currentDescription,
+    // required this.currentDescription,
     required this.documentId,
   });
 
@@ -45,7 +45,7 @@ class _EditItemFormState extends State<EditItemForm> {
     );
 
     _descriptionController = TextEditingController(
-      text: widget.currentDescription,
+      // text: widget.currentDescription,
     );
     super.initState();
   }
@@ -117,67 +117,67 @@ class _EditItemFormState extends State<EditItemForm> {
           ),
           _isProcessing
               ? Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      CustomColors.firebaseOrange,
-                    ),
-                  ),
-                )
+            padding: const EdgeInsets.all(16.0),
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(
+                CustomColors.firebaseOrange,
+              ),
+            ),
+          )
               : Container(
-                  width: double.maxFinite,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        CustomColors.firebaseOrange,
-                      ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    onPressed: () async {
-                      widget.titleFocusNode.unfocus();
-                      widget.descriptionFocusNode.unfocus();
-
-                      if (_editItemFormKey.currentState!.validate()) {
-                        setState(() {
-                          _isProcessing = true;
-                        });
-
-                        await Database.updateItem(
-                          docId: widget.documentId,
-                          title: _titleController.text,
-                          km: _kmController.text,
-                          fuelamt: _fuelamtController.text,
-                          fuelpl: _fuelplController.text,
-                          location: _locationController.text,
-                          notes: _notesController.text,
-                          description: _descriptionController.text,
-                        );
-
-                        setState(() {
-                          _isProcessing = false;
-                        });
-
-                        Navigator.of(context).pop();
-                      }
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 16.0, bottom: 16.0),
-                      child: Text(
-                        'UPDATE ITEM',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: CustomColors.firebaseGrey,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),
+            width: double.maxFinite,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                  CustomColors.firebaseOrange,
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+              ),
+              onPressed: () async {
+                widget.titleFocusNode.unfocus();
+                widget.descriptionFocusNode.unfocus();
+
+                if (_editItemFormKey.currentState!.validate()) {
+                  setState(() {
+                    _isProcessing = true;
+                  });
+
+                  await Database.updateItem(
+                    docId: widget.documentId,
+                    title: _titleController.text,
+                    km: _kmController.text,
+                    fuelamt: _fuelamtController.text,
+                    fuelpl: _fuelplController.text,
+                    location: _locationController.text,
+                    notes: _notesController.text,
+                    description: _descriptionController.text,
+                  );
+
+                  setState(() {
+                    _isProcessing = false;
+                  });
+
+                  Navigator.of(context).pop();
+                }
+              },
+              child: Padding(
+                padding: EdgeInsets.only(top: 16.0, bottom: 16.0),
+                child: Text(
+                  'UPDATE ITEM',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColors.firebaseGrey,
+                    letterSpacing: 2,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

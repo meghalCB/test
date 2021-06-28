@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final FocusNode _uidFocusNode = FocusNode();
 
+
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
 
@@ -22,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: () => _uidFocusNode.unfocus(),
       child: Scaffold(
+
         backgroundColor: CustomColors.firebaseNavy,
         body: SafeArea(
           child: Padding(

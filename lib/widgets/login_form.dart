@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfire_samples/HomeScreen/home_design_course.dart';
 import 'package:flutterfire_samples/res/custom_colors.dart';
 import 'package:flutterfire_samples/screens/dashboard_screen.dart';
 import 'package:flutterfire_samples/utils/database.dart';
 import 'package:flutterfire_samples/utils/validator.dart';
 
+import '../navigation_home_screen.dart';
 import 'custom_form_field.dart';
 
 class LoginForm extends StatefulWidget {
@@ -73,7 +75,7 @@ class _LoginFormState extends State<LoginForm> {
 
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => DashboardScreen(),
+                        builder: (context) => NavigationHomeScreen(),//DashboardScreen()
                       ),
                     );
                   }

@@ -19,11 +19,11 @@ class AddScreen extends StatelessWidget {
       onTap: () {
         _titleFocusNode.unfocus();
         _descriptionFocusNode.unfocus();
-        /*_fuelamtFocusNode = unfocus();
-        _fuelplFocusNode = unfocus();
-        _locationFocusNode = unfocus();
-        _notesFocusNode = unfocus();
-        _descriptionFocusNode = unfocus();*/
+        _fuelamtFocusNode.unfocus();
+        _fuelplFocusNode.unfocus();
+        _locationFocusNode.unfocus();
+        _notesFocusNode.unfocus();
+        _descriptionFocusNode.unfocus();
 
       },
       child: Scaffold(
@@ -41,14 +41,16 @@ class AddScreen extends StatelessWidget {
               right: 16.0,
               bottom: 20.0,
             ),
-            child: AddItemForm(
-              titleFocusNode: _titleFocusNode,
-              descriptionFocusNode: _descriptionFocusNode,
-              fuelamtFocusNode: _fuelamtFocusNode,
-              fuelplFocusNode: _fuelplFocusNode,
-              locationFocusNode: _locationFocusNode,
-              notesFocusNode: _notesFocusNode,
-              kmFocusNode: _kmFocusNode,
+            child: SingleChildScrollView(
+              child: AddItemForm(
+                titleFocusNode: _titleFocusNode,
+                descriptionFocusNode: _descriptionFocusNode,
+                fuelamtFocusNode: _fuelamtFocusNode,
+                fuelplFocusNode: _fuelplFocusNode,
+                locationFocusNode: _locationFocusNode,
+                notesFocusNode: _notesFocusNode,
+                kmFocusNode: _kmFocusNode,
+              ),
             ),
           ),
         ),

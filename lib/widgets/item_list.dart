@@ -21,10 +21,7 @@ class ItemList extends StatelessWidget {
               String docID = snapshot.data!.docs[index].id;
               String title = noteInfo['title'];
               String fuelamt = noteInfo['fuelamt'];
-              String fuelpl = noteInfo['fuelpl'];
-              String location = noteInfo['location'];
-              String notes = noteInfo['notes'];
-              String description = noteInfo['description'];
+              // String description = noteInfo['description'];
 
               return Ink(
                 decoration: BoxDecoration(
@@ -35,22 +32,28 @@ class ItemList extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  onTap: () => Navigator.of(context).push(
+                /*  onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => EditScreen(
                         currentTitle: title,
-                        currentDescription: description,
+                        // currentDescription: description,
                         documentId: docID,
                       ),
                     ),
-                  ),
+                  ),*/
                   title: Text(
                     title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
+                  trailing: Wrap(
+                    children: <Widget>[
+                      // Icon()
+                      Text('\u{20B9} '+ fuelamt)
+                    ],
+                  ),
                   subtitle: Text(
-                    description,
+                    fuelamt,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
